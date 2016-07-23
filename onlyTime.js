@@ -12,13 +12,14 @@ OnlyTime.prototype.toMinutes = function (time) {
 
 OnlyTime.prototype.checkZero = function (number) {
   return  number < 10
-    ? `0${number}`
+    ? String.prototype.concat(0, number)
     : number;
 };
 
 OnlyTime.prototype.toTime = function (minutes) {
   let modulo = minutes % 60;
+  let hours = this.checkZero((minutes - modulo) / 60);
   return modulo === 0
-    ? `${ this.checkZero(minutes / 60) }:00`
-    : `${ this.checkZero((minutes - modulo) / 60) }:${ this.checkZero(modulo) }`;
+    ? String.prototype.concat(hours, ':00')
+    : String.prototype.concat(hours, ':', this.checkZero(modulo));
 };
