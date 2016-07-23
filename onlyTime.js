@@ -53,6 +53,6 @@ OnlyTime.prototype.toTime = function (minutes) {
   let modulo = minutes % 60;
   let hours = this.checkZero((minutes - modulo) / 60);
   return modulo === 0
-    ? String.prototype.concat(hours, ':00')
-    : String.prototype.concat(hours, ':', this.checkZero(modulo));
+    ? String.prototype.concat(hours, this.separator, '00')
+    : String.prototype.concat(hours, this.separator, this.checkZero(modulo));
 };
