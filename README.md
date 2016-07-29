@@ -3,6 +3,12 @@ Library for time conversion from 24 hours clock system to number of minutes.
 Designed and used for storing time in database.
 Using numbers instead of strings not only saves memory, but also let you perform comparison operations.
 
+## Installation
+Install package via npm:
+```bash
+$ npm install --save only-time
+```
+
 ## Usage
 ```javascript
 // Create new instance:
