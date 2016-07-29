@@ -5,7 +5,7 @@ Using numbers instead of strings not only saves memory, but also let you perform
 
 ## Installation
 Install package via npm:
-```bash
+```
 $ npm install --save only-time
 ```
 
