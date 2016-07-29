@@ -22,9 +22,9 @@ function OnlyTime (separator) {
 }
 
 /**
- * @description
+ * @description Update numbers below 10 with 0 upfront.
  * @param {integer} number
- * @returns {}
+ * @returns {string}
  */
 OnlyTime.prototype.checkZero = function (number) {
   return  number < 10
