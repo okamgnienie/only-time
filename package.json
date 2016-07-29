@@ -12,10 +12,13 @@
   },
   "keywords": [
     "time",
+    "hours",
     "minutes",
-    "optimisation",
+    "seconds",
+    "convert",
     "database",
-    "convert"
+    "timestamp",
+    "optimisation"
   ],
   "author": "phardyn",
   "license": "MIT",
