@@ -1,0 +1,26 @@
+{
+  "name": "only-time",
+  "version": "1.0.1",
+  "description": "Converting time to minutes and back. ( '12:12' to 732 and 129 to '02:09' )",
+  "main": "onlyTime.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phardyn/only-time.git"
+  },
+  "keywords": [
+    "time",
+    "minutes",
+    "optimisation",
+    "database",
+    "convert"
+  ],
+  "author": "phardyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phardyn/only-time/issues"
+  },
+  "homepage": "https://github.com/phardyn/only-time#readme"
+}
