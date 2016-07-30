@@ -39,7 +39,7 @@ OnlyTime.prototype.checkZero = function (number) {
  * @returns {string}
  */
 OnlyTime.prototype.toMinutes = function (time) {
-  let hours = time.split(this.separator);
+  var hours = time.split(this.separator);
   return Number(hours[0]) * 60 + Number(hours[1]);
 };
 
@@ -50,8 +50,8 @@ OnlyTime.prototype.toMinutes = function (time) {
  * @returns {string}
  */
 OnlyTime.prototype.toTime = function (minutes) {
-  let modulo = minutes % 60;
-  let hours = this.checkZero((minutes - modulo) / 60);
+  var modulo = minutes % 60;
+  var hours = this.checkZero((minutes - modulo) / 60);
   return modulo === 0
     ? String.prototype.concat(hours, this.separator, '00')
     : String.prototype.concat(hours, this.separator, this.checkZero(modulo));
