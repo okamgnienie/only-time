@@ -1,6 +1,6 @@
 {
   "name": "only-time",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Converting time to minutes and back. ( '12:12' to 732 and 129 to '02:09' )",
   "main": "onlyTime.js",
   "scripts": {
