@@ -3,8 +3,7 @@ Library for time conversion from 24 hours clock system to number of minutes and 
 Designed and used for storing time in database.
 Using numbers instead of strings not only save memory, but also let you perform comparison operations.
 
-**NOTE**: `toTime` method is now obsolete, instead use `fromMinutes`.
-However, backward compatibility is ensured.
+**NOTE**: `toTime` method is now obsolete, instead use `fromMinutes` (backward compatibility is ensured).
 
 ## Installation
 Install package via npm:
@@ -31,7 +30,7 @@ T.fromSeconds(3723); // -> '01:02:03'
 ```
 
 ## Separator
-Default separator is set to `:`, but you can choose your own passing it as parameter while constructing object
+Default separator is set to `:`, but you can choose your own passing it as parameter while constructing object:
 ```javascript
 var T = new OnlyTime('.');
 ```
