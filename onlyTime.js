@@ -1,13 +1,8 @@
 
 /**
- * @file Converting time from 24 hours format ('22:22') to number of minutes
- * (1342) and back. Designed and used for storing time in database.
- * Using numbers instead of strings not only saves memory,
- * but also let you perform comparison operations.
- * @author Przemyslaw Hardyn
- * @example var Ot = new OnlyTime();
- *          Ot.toMinutes('01:01'); // -> 61
- *          Ot.toTime(61);         // -> '01:01'
+ * @author Przemyslaw Hardyn | przemyslawhardyn.com
+ * Converting time to minutes or seconds and back.
+ * https://github.com/phardyn/only-time
  */
 
 
