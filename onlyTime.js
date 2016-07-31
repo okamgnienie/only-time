@@ -41,6 +41,7 @@ OnlyTime.prototype.format = function (int) {
  * @returns {integer}
  */
 OnlyTime.prototype.toMinutes = function (time) {
+  this.checkTimeMinutes(time);
   var t = time.split(this.separator);
   return Number(t[0]) * 60 + Number(t[1]);
 };
@@ -52,6 +53,7 @@ OnlyTime.prototype.toMinutes = function (time) {
  * @returns {integer}
  */
 OnlyTime.prototype.toSeconds = function (time) {
+  this.checkTimeSeconds(time);
   var t = time.split(this.separator);
   return Number(t[0]) * 3600 + Number(t[1]) * 60 + Number(t[2]);
 };
@@ -63,6 +65,7 @@ OnlyTime.prototype.toSeconds = function (time) {
  * @returns {string}
  */
 OnlyTime.prototype.fromMinutes = function (minutes) {
+  this.checkMinutes(minutes);
   var modulo = minutes % 60;
   return String.prototype.concat(
     this.format((minutes - modulo) / 60),
@@ -78,12 +81,61 @@ OnlyTime.prototype.fromMinutes = function (minutes) {
  * @returns {string}
  */
 OnlyTime.prototype.fromSeconds = function (seconds) {
+  this.checkSeconds(seconds);
   var modulo = seconds % 60;
   return String.prototype.concat(
     this.fromMinutes((seconds - modulo) / 60),
     this.separator,
     this.format(modulo)
   );
+};
+
+/**
+ * @description Check if number of minutes is valid.
+ * @param {integer} minutes
+ */
+OnlyTime.prototype.checkMinutes = function (minutes) {
+  if (minutes < 0 || minutes > 1440) {
+    throw new Error(
+      'only-time: Wrong number of minutes: ' +
+      minutes +
+      ' . Should be in the range [0, 1440].'
+    );
+  }
+};
+
+/**
+ * @description Check if number of seconds is valid.
+ * @param {integer} seconds
+ */
+OnlyTime.prototype.checkSeconds = function (seconds) {
+  if (seconds < 0 || seconds > 86400) {
+    throw new Error(
+      'only-time: Wrong number of seconds: ' +
+      seconds +
+      ' . Should be in the range [0, 86400].'
+    );
+  }
+};
+
+/**
+ * @description Check time string for errors.
+ * @param {string} time
+ */
+OnlyTime.prototype.checkTimeMinutes = function (time) {
+  if (!/([01]\d|2[0-3]):([0-5]\d)/.exec(time)) {
+    throw new Error('only-time: Invalid time: "' + time + '".');
+  }
+};
+
+/**
+ * @description Check time string with seconds for errors.
+ * @param {string} time
+ */
+OnlyTime.prototype.checkTimeSeconds = function (time) {
+  if (!/([01]\d|2[0-3]):([0-5]\d):([0-5]\d)/.exec(time)) {
+    throw new Error('only-time: Invalid time: "' + time + '".');
+  }
 };
 
 /**
