@@ -1,7 +1,7 @@
 
 /**
  * @author Przemyslaw Hardyn | przemyslawhardyn.com
- * Converting time to minutes or seconds and back.
+ * Converting time to minutes, seconds and back.
  * https://github.com/phardyn/only-time
  */
 
