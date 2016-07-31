@@ -1,6 +1,6 @@
 {
   "name": "only-time",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Converting time to minutes, seconds and back. ( '12:12' to 732, 129 to '02:09', '01:02:03' to 3723, 70402 to '19:33:22' etc.)",
   "main": "onlyTime.js",
   "scripts": {
