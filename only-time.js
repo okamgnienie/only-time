@@ -129,7 +129,13 @@ OnlyTime.prototype.checkSeconds = function (seconds) {
  * @param {string} time
  */
 OnlyTime.prototype.checkTimeMinutes = function (time) {
-  if (!/([01]\d|2[0-3]):([0-5]\d)/.exec(time)) {
+  this.minutesTest = this.minutesTest
+    ? this.minutesTest
+    : new RegExp(String.prototype.concat(
+      '([01]\\d|2[0-3])\\', this.separator, '([0-5]\\d)'
+    ));
+
+  if (!this.minutesTest.exec(time)) {
     throw new Error('only-time: Invalid time: "' + time + '".');
   }
 };
@@ -139,8 +145,14 @@ OnlyTime.prototype.checkTimeMinutes = function (time) {
  * @param {string} time
  */
 OnlyTime.prototype.checkTimeSeconds = function (time) {
-  if (!/([01]\d|2[0-3]):([0-5]\d):([0-5]\d)/.exec(time)) {
-    throw new Error('only-time: Invalid time: "' + time + '".');
+  this.secondsTest = this.secondsTest
+    ? this.secondsTest
+    : new RegExp(String.prototype.concat(
+      '([01]\\d|2[0-3])\\', this.separator, '([0-5]\\d)\\', this.separator, '([0-5]\\d)'
+    ));
+
+  if (!this.secondsTest.exec(time)) {
+    throw new Error('only-time: Invalid time with seconds: "' + time + '".');
   }
 };
 
