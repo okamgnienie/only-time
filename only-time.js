@@ -11,6 +11,12 @@
  * @param {string} [separator]
  */
 function OnlyTime (separator) {
+  if (separator && String(separator).length > 1 || !isNaN(separator)) {
+    throw new Error(
+      'only-time: Invalid separator - has to be one character and cannot be a digit.'
+    );
+  }
+
   this.separator = separator
     ? separator
     : ':';
