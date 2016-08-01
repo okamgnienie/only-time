@@ -99,7 +99,7 @@ OnlyTime.prototype.checkMinutes = function (minutes) {
     throw new Error(
       'only-time: Wrong number of minutes: ' +
       minutes +
-      ' . Should be in the range [0, 1440].'
+      '. Should be in the range [0, 1440].'
     );
   }
 };
@@ -113,7 +113,7 @@ OnlyTime.prototype.checkSeconds = function (seconds) {
     throw new Error(
       'only-time: Wrong number of seconds: ' +
       seconds +
-      ' . Should be in the range [0, 86400].'
+      '. Should be in the range [0, 86400].'
     );
   }
 };
