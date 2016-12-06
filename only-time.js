@@ -12,8 +12,8 @@
  */
 function OnlyTime (separator) {
   if (separator && String(separator).length > 1 || !isNaN(separator)) {
-    throw new Error(
-      'only-time: Invalid separator - has to be one character and cannot be a digit.'
+    this.throwError(
+      'Invalid separator - has to be one character and cannot be a digit.'
     );
   }
 
@@ -109,8 +109,8 @@ OnlyTime.prototype.checkModulo = function (time) {
  */
 OnlyTime.prototype.checkMinutes = function (minutes) {
   if (minutes < 0 || minutes > 1440) {
-    throw new Error(
-      'only-time: Wrong number of minutes: ' +
+    this.throwError(
+      'Wrong number of minutes: ' +
       minutes +
       '. Should be in the range [0, 1440].'
     );
@@ -123,9 +123,9 @@ OnlyTime.prototype.checkMinutes = function (minutes) {
  */
 OnlyTime.prototype.checkSeconds = function (seconds) {
   if (seconds < 0 || seconds > 86400) {
-    throw new Error(
-      'only-time: Wrong number of seconds: ' +
-      seconds +
+    this.throwError(
+      'Wrong number of seconds: ' +
+       seconds +
       '. Should be in the range [0, 86400].'
     );
   }
@@ -143,7 +143,7 @@ OnlyTime.prototype.checkTimeMinutes = function (time) {
     ));
 
   if (!this.minutesTest.exec(time)) {
-    throw new Error('only-time: Invalid time: "' + time + '".');
+    this.throwError('Invalid time with minutes: ' + time + '.');
   }
 };
 
@@ -159,8 +159,16 @@ OnlyTime.prototype.checkTimeSeconds = function (time) {
     ));
 
   if (!this.secondsTest.exec(time)) {
-    throw new Error('only-time: Invalid time with seconds: "' + time + '".');
+    this.throwError('Invalid time with seconds: ' + time + '.');
   }
+};
+
+/**
+ * @description Throw custom only-time error in the console
+ * @param {string} reason
+ */
+OnlyTime.prototype.throwError = function (reason) {
+  throw new Error('only-time: ' + reason);
 };
 
 /**
