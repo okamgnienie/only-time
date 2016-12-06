@@ -17,9 +17,7 @@ function OnlyTime (separator) {
     );
   }
 
-  this.separator = separator
-    ? separator
-    : ':';
+  this.separator = separator ? separator : ':';
 }
 
 /**
