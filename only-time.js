@@ -70,7 +70,7 @@ OnlyTime.prototype.toSeconds = function (time) {
  */
 OnlyTime.prototype.fromMinutes = function (minutes) {
   this.checkMinutes(minutes);
-  var modulo = minutes % 60;
+  var modulo = this.checkModulo(minutes);
   return String.prototype.concat(
     this.format((minutes - modulo) / 60),
     this.separator,
@@ -86,12 +86,21 @@ OnlyTime.prototype.fromMinutes = function (minutes) {
  */
 OnlyTime.prototype.fromSeconds = function (seconds) {
   this.checkSeconds(seconds);
-  var modulo = seconds % 60;
+  var modulo = this.checkModulo(seconds);
   return String.prototype.concat(
     this.fromMinutes((seconds - modulo) / 60),
     this.separator,
     this.format(modulo)
   );
+};
+
+/**
+ * @description Verify time modulo for minutes and seconds
+ * @param {integer} time
+ * @returns {number}
+ */
+OnlyTime.prototype.checkModulo = function (time) {
+  return time % 60;
 };
 
 /**
