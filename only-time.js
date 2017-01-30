@@ -142,7 +142,7 @@ OnlyTime.prototype.checkTimeMinutes = function (time) {
       '([01]\\d|2[0-3])\\', this.separator, '([0-5]\\d)'
     ));
 
-  if (!this.minutesTest.exec(time)) {
+  if (time.length !== 5 || !this.minutesTest.exec(time)) {
     this.throwError('Invalid time with minutes: ' + time + '.');
   }
 };
@@ -158,7 +158,7 @@ OnlyTime.prototype.checkTimeSeconds = function (time) {
       '([01]\\d|2[0-3])\\', this.separator, '([0-5]\\d)\\', this.separator, '([0-5]\\d)'
     ));
 
-  if (!this.secondsTest.exec(time)) {
+  if (time.length !== 8 || !this.secondsTest.exec(time)) {
     this.throwError('Invalid time with seconds: ' + time + '.');
   }
 };

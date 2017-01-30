@@ -1,6 +1,6 @@
 # only-time
 Library for time conversion from 24 hours clock system to number of minutes and seconds.
-Designed and used for storing time in database.
+Designed and used for transforming time before storing and after retrieving it from the database, when there is no need to store the whole date.
 Using numbers instead of strings not only save memory, but also let you perform comparison operations faster.
 
 **NOTE**: `toTime` method is now obsolete, instead use `fromMinutes` (backward compatibility is ensured).
