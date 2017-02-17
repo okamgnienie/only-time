@@ -4,7 +4,7 @@
   "description": "Converting time to minutes, seconds and back. ( '12:12' to 732, 129 to '02:09', '01:02:03' to 3723, 70402 to '19:33:22' etc.)",
   "main": "only-time.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel only-time.js --presets=es2015 | uglifyjs > only-time.min.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/phardyn/only-time/issues"
   },
-  "homepage": "https://github.com/phardyn/only-time#readme"
+  "homepage": "https://github.com/phardyn/only-time#readme",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "uglify-js": "^2.7.5"
+  }
 }
