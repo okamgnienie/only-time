@@ -11,11 +11,13 @@
     "url": "git+https://github.com/phardyn/only-time.git"
   },
   "keywords": [
+    "only",
     "time",
     "hours",
     "minutes",
     "seconds",
     "convert",
+    "conversion",
     "database",
     "timestamp",
     "optimisation"
