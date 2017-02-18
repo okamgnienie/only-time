@@ -126,7 +126,7 @@ class OnlyTime {
   checkMinutes(minutes) {
     if (minutes < 0 || minutes > 1440) {
       this.throwError(
-        `Wrong number of minutes: ${minutes}. Should be in the range [0, 1440].`
+        `Wrong number of minutes: ${minutes}. Should be in the range [0, 1439].`
       );
     }
   }
@@ -139,7 +139,7 @@ class OnlyTime {
   checkSeconds(seconds) {
     if (seconds < 0 || seconds > 86400) {
       this.throwError(
-        `Wrong number of seconds: ${seconds}. Should be in the range [0, 86400].`
+        `Wrong number of seconds: ${seconds}. Should be in the range [0, 86399].`
       );
     }
   };
