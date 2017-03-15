@@ -194,3 +194,5 @@ class OnlyTime {
     return this.fromMinutes(minutes);
   }
 }
+
+module.exports = OnlyTime;
