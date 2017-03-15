@@ -1,4 +1,3 @@
-
 /**
  * @author Przemyslaw Hardyn | przemyslawhardyn.com
  * Converting time to minutes, seconds and back.
@@ -21,7 +20,6 @@ class OnlyTime {
 
     this.separator = separator;
   }
-
 
   /**
    * @desc Add 0 upfront, return 00 or integer.
@@ -142,7 +140,7 @@ class OnlyTime {
         `Wrong number of seconds: ${seconds}. Should be in the range [0, 86399].`
       );
     }
-  };
+  }
 
   /**
    * @desc Check time string for errors.
@@ -183,8 +181,7 @@ class OnlyTime {
    */
   throwError(reason) {
     throw new Error(`only-time: ${reason}`);
-  };
-
+  }
 
   /**
    * @desc Alias to keep the backward compatibility.
