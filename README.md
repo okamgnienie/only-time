@@ -11,6 +11,11 @@ Install package via npm:
 $ npm install --save only-time
 ```
 
+Install package via yarn:
+```
+$ yarn add only-time
+```
+
 ## Usage
 In Node.js application:
 ```javascript
