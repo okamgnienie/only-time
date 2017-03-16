@@ -30,7 +30,7 @@ class OnlyTime {
    * @returns {string}
    */
   format(int) {
-    var n = `${int}`;
+    let n = `${int}`;
 
     if (int === 0) {
       n = '00';
@@ -51,7 +51,7 @@ class OnlyTime {
    */
   toMinutes(time) {
     this.checkTimeMinutes(time);
-    let t = time.split(this.separator);
+    const t = time.split(this.separator);
     return Number(t[0]) * 60 + Number(t[1]);
   }
 
@@ -65,7 +65,7 @@ class OnlyTime {
    */
   toSeconds(time) {
     this.checkTimeSeconds(time);
-    let t = time.split(this.separator);
+    const t = time.split(this.separator);
     return Number(t[0]) * 3600 + Number(t[1]) * 60 + Number(t[2]);
   }
 
@@ -79,7 +79,7 @@ class OnlyTime {
    */
   fromMinutes(minutes) {
     this.checkMinutes(minutes);
-    let modulo = this.checkModulo(minutes);
+    const modulo = this.checkModulo(minutes);
     return String.prototype.concat(
       this.format((minutes - modulo) / 60),
       this.separator,
@@ -97,7 +97,7 @@ class OnlyTime {
    */
   fromSeconds(seconds) {
     this.checkSeconds(seconds);
-    let modulo = this.checkModulo(seconds);
+    const modulo = this.checkModulo(seconds);
     return String.prototype.concat(
       this.fromMinutes((seconds - modulo) / 60),
       this.separator,
