@@ -12,10 +12,21 @@ $ npm install --save only-time
 ```
 
 ## Usage
+In Node.js application:
+```javascript
+// Create new instance:
+const OnlyTime = require('only-time');
+const T = new OnlyTime();
+```
+
+In other applications, after including `only-time.min.js` file:
 ```javascript
 // Create new instance:
 var T = new OnlyTime();
+```
 
+Sample conversion:
+```javascript
 // Convert from time to minutes:
 T.toMinutes('01:01'); // -> 61
 
