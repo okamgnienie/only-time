@@ -13,7 +13,7 @@ describe('OnlyTime', () => {
 
   const separator = '.';
 
-  // Separator cannot be a digit, and has to be on character
+  // Separator cannot be a digit and has to be one character
   const incorrectSeparators = ['1', -1, 12, '-1', '12', '::', '..'];
 
   // Minutes that are not in range [0, 1439]
