@@ -29,6 +29,13 @@ describe('OnlyTime', () => {
     `24${separator}60`
   ];
 
+  const correctTimeMinutes = [
+    { time: `00${separator}00`, minutes: 0 },
+    { time: `00${separator}01`, minutes: 1 },
+    { time: `23${separator}59`, minutes: 1439 },
+    { time: `12${separator}12`, minutes: 732 },
+  ];
+
   const incorrectTimeSeconds = [
     `0${separator}0${separator}0`,
     `24${separator}00${separator}00`,
@@ -37,6 +44,13 @@ describe('OnlyTime', () => {
     `24${separator}60${separator}00`,
     `24${separator}00${separator}60`,
     `24${separator}60${separator}60`
+  ];
+
+  const correctTimeSeconds = [
+    { time: `00${separator}00${separator}00`, seconds: 0 },
+    { time: `00${separator}00${separator}01`, seconds: 1 },
+    { time: `23${separator}59${separator}59`, seconds: 86399 },
+    { time: `12${separator}12${separator}12`, seconds: 43932 }
   ];
 
   beforeEach(() => {
@@ -77,6 +91,12 @@ describe('OnlyTime', () => {
         );
       }
     });
+
+    it('converts properly time to number of minutes', () => {
+      for (let t of correctTimeMinutes) {
+        expect(T.toMinutes(t.time)).to.equal(t.minutes);
+      }
+    });
   });
 
   describe('OnlyTime.toSeconds', () => {
@@ -87,6 +107,12 @@ describe('OnlyTime', () => {
           Error,
           `Invalid time with seconds: ${i}.`
         );
+      }
+    });
+
+    it('converts properly time to number of seconds', () => {
+      for (let t of correctTimeSeconds) {
+        expect(T.toSeconds(t.time)).to.equal(t.seconds);
       }
     });
   });
@@ -101,6 +127,12 @@ describe('OnlyTime', () => {
         );
       }
     });
+
+    it('converts properly number of minutes to time', () => {
+      for (let t of correctTimeMinutes) {
+        expect(T.fromMinutes(t.minutes)).to.equal(t.time);
+      }
+    });
   });
 
   describe('OnlyTime.fromSeconds', () => {
@@ -111,6 +143,12 @@ describe('OnlyTime', () => {
           Error,
           `only-time: Wrong number of seconds: ${i}. Should be in the range [0, 86399].`
         );
+      }
+    });
+
+    it('converts properly number of seconds to time', () => {
+      for (let t of correctTimeSeconds) {
+        expect(T.fromSeconds(t.seconds)).to.equal(t.time);
       }
     });
   });
