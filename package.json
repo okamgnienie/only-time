@@ -1,7 +1,7 @@
 {
   "name": "only-time",
   "version": "2.0.0",
-  "description": "Converting time to minutes, seconds and back. ( '12:12' to 732, 129 to '02:09', '01:02:03' to 3723, 70402 to '19:33:22' etc.)",
+  "description": "Converting time to minutes, seconds and back.",
   "main": "only-time.js",
   "scripts": {
     "build": "babel only-time.js --presets=es2015 | sed -e 's/module.exports = OnlyTime;//g' | uglifyjs > only-time.min.js",
