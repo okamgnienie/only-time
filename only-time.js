@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @author Przemyslaw Hardyn | przemyslawhardyn.com
  * Converting time to minutes, seconds and back.
